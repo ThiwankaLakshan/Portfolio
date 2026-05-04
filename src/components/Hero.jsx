@@ -29,7 +29,7 @@ const Hero = () => {
                         </span>
                     </h1>
                     <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-lg leading-relaxed">
-                        A passionate <span className="text-slate-200 font-semibold">Backend Developer</span> and Undergraduate Student crafting scalable systems and real-time applications.
+                        A passionate <span className="text-slate-200 font-semibold">Full Stack Developer</span> and Undergraduate Student crafting scalable systems and real-time applications.
                     </p>
 
                     <div className="flex flex-wrap gap-4 mb-12">
@@ -37,8 +37,9 @@ const Hero = () => {
                             View My Work
                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </a>
-                        <a href="#contact" className="btn-outline">
-                            Contact Me
+                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline flex items-center gap-2 group">
+                            <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
+                            Resume
                         </a>
                     </div>
 
@@ -79,7 +80,7 @@ const Hero = () => {
                                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
                                 </div>
-                                <span className="text-sm font-mono text-cyan-400">BackEnd Dev</span>
+                                <span className="text-sm font-mono text-cyan-400">Full Stack Dev</span>
                             </div>
                         </div>
                     </div>

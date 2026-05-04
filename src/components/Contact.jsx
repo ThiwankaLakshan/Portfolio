@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Github, Linkedin, Send, Phone } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -8,12 +9,42 @@ const Contact = () => {
         email: '',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Mock submission
-        alert(`Thanks for reaching out, ${formData.name}! I'll get back to you soon.`);
-        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        // EmailJS Configuration
+        // Replace these with your actual EmailJS credentials
+        const serviceId = 'service_3hypeff';
+        const templateId = 'template_kcx78pn';
+        const publicKey = 'XnjsRM2qxKvZZ7t9f';
+
+        try {
+            const result = await emailjs.send(
+                serviceId,
+                templateId,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    message: formData.message,
+                    to_name: 'Thiwanka', // Your name
+                },
+                publicKey
+            );
+
+            console.log('Email sent successfully:', result);
+            setSubmitStatus('success');
+            setFormData({ name: '', email: '', message: '' });
+        } catch (error) {
+            console.error('Email send error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e) => {
@@ -83,12 +114,26 @@ const Contact = () => {
                                     placeholder="Hello, I'd like to talk about..."
                                 ></textarea>
                             </div>
+
+                            {/* Status Messages */}
+                            {submitStatus === 'success' && (
+                                <div className="p-4 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-xl text-green-800 dark:text-green-300">
+                                    ✓ Message sent successfully! I'll get back to you soon.
+                                </div>
+                            )}
+                            {submitStatus === 'error' && (
+                                <div className="p-4 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-xl text-red-800 dark:text-red-300">
+                                    ✗ Failed to send message. Please try again or email me directly at thiwankalakshan007@gmail.com
+                                </div>
+                            )}
+
                             <button
                                 type="submit"
-                                className="w-full py-4 px-6 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-cyan-500/25 flex items-center justify-center gap-2"
+                                disabled={isSubmitting}
+                                className="w-full py-4 px-6 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-cyan-500/25 flex items-center justify-center gap-2"
                             >
                                 <Send size={20} />
-                                <span>Send Message</span>
+                                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                             </button>
                         </form>
                     </div>
@@ -113,8 +158,8 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-medium text-slate-500 dark:text-slate-400">Email</h4>
-                                    <a href="mailto:thiwankalakshan07@gmail.com" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-cyan-500 transition-colors">
-                                        thiwankalakshan07@gmail.com
+                                    <a href="mailto:thiwankalakshan007@gmail.com" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-cyan-500 transition-colors">
+                                        thiwankalakshan007@gmail.com
                                     </a>
                                 </div>
                             </div>

@@ -17,8 +17,8 @@ const Navbar = () => {
     const links = [
         { name: 'About', href: '#about' },
         { name: 'Experience', href: '#experience' },
+        { name: 'Skills', href: '#skills' },
         { name: 'Projects', href: '#projects' },
-        { name: 'Contact', href: '#contact' },
     ];
 
     return (
@@ -40,8 +40,8 @@ const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
-                    <a href="/resume.pdf" className="px-4 py-2 text-sm font-medium text-cyan-400 border border-cyan-500/50 rounded-md hover:bg-cyan-500/10 transition-colors">
-                        Resume
+                    <a href="#contact" className="px-4 py-2 text-sm font-medium text-cyan-400 border border-cyan-500/50 rounded-md hover:bg-cyan-500/10 transition-colors">
+                        Contact Me
                     </a>
                 </div>
 

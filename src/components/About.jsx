@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Server, Database, Layout, Terminal } from 'lucide-react';
 
 const About = () => {
     return (
@@ -19,7 +18,7 @@ const About = () => {
                                 Hello! I'm <span className="text-slate-200 font-medium">Thiwanka</span>, a dedicated software enthusiast currently pursuing my degree at the <span className="text-cyan-400">University of Vavuniya</span>.
                             </p>
                             <p>
-                                My journey involves deep-diving into backend architectures and playing with data. I enjoy the logic behind the scenes—making sure APIs are fast, databases are optimized, and servers are secure.
+                                My journey involves building end-to-end applications, from intuitive user interfaces to robust backend architectures. I enjoy both crafting seamless user experiences and the logic behind the scenes—making sure APIs are fast, databases are optimized, and applications are secure.
                             </p>
                             <p>
                                 When I'm not coding, you can find me volunteering with <span className="text-blue-400">IEEE</span>, organizing tech events, or exploring the latest in cloud computing.
@@ -31,20 +30,32 @@ const About = () => {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                        className="relative"
                     >
-                        {[
-                            { icon: Server, title: "Backend Dev", desc: "Node.js, Express, C#" },
-                            { icon: Database, title: "Databases", desc: "PostgreSQL, MongoDB" },
-                            { icon: Terminal, title: "DevOps", desc: "Docker, Git, CI/CD" },
-                            { icon: Layout, title: "Frontend", desc: "React, Tailwind CSS" }
-                        ].map((item, idx) => (
-                            <div key={idx} className="p-6 bg-slate-800 rounded-xl border border-slate-700/50 hover:border-cyan-500/30 transition-colors">
-                                <item.icon className="w-8 h-8 text-cyan-400 mb-4" />
-                                <h3 className="text-lg font-bold text-slate-200 mb-1">{item.title}</h3>
-                                <p className="text-sm text-slate-400">{item.desc}</p>
-                            </div>
-                        ))}
+                        <div className="relative bg-slate-900 rounded-2xl p-8 border border-slate-800">
+                            <div className="absolute -top-4 -right-4 w-24 h-24 bg-cyan-500/10 rounded-full blur-2xl"></div>
+                            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl"></div>
+                            <h3 className="text-xl font-bold text-white mb-6 relative z-10">My Values</h3>
+                            <ul className="space-y-4 relative z-10">
+                                {[
+                                    { title: "User-Centric Solutions", desc: "Designing intuitive, seamless experiences by putting the user's needs at the center of every decision." },
+                                    { title: "Analytical Problem-Solving", desc: "Breaking down complex technical challenges into manageable components to build robust, high-performance systems." },
+                                    { title: "Collaborative Leadership", desc: "Leveraging my experience in team management to foster clear communication and ensure project goals are met efficiently." },
+                                    { title: "Code Excellence", desc: "Prioritizing clean, maintainable, and scalable architecture to ensure long-term stability and security." },
+                                    { title: "Continuous Learning", desc: "Staying at the forefront of modern tech and cloud computing to bring the most effective tools to every project." }
+                                ].map((value, idx) => (
+                                    <li key={idx} className="flex gap-4">
+                                        <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-cyan-400 font-bold text-sm border border-slate-700">
+                                            {idx + 1}
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-white">{value.title}</h4>
+                                            <p className="text-sm text-slate-400">{value.desc}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </motion.div>
 
                 </div>
