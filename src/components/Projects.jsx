@@ -1,23 +1,46 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Folder, ExternalLink, ArrowRight } from 'lucide-react';
+import { Github, Folder, ExternalLink, ArrowRight, Globe, Cpu } from 'lucide-react';
+import {
+    SiReact,
+    SiNodedotjs,
+    SiExpress,
+    SiPostgresql,
+    SiJavascript,
+    SiHtml5,
+    SiCss3,
+    SiDotnet
+} from 'react-icons/si';
+
+const tagIcons = {
+    "React": <SiReact />,
+    "Node.js": <SiNodedotjs />,
+    "Express": <SiExpress />,
+    "PostgreSQL": <SiPostgresql />,
+    "IoT": <Cpu />,
+    "RESTful APIs": <Globe />,
+    "JavaScript": <SiJavascript />,
+    "HTML5": <SiHtml5 />,
+    "CSS3": <SiCss3 />,
+    ".NET": <SiDotnet />
+};
 
 const Projects = () => {
     const projects = [
         {
-            title: "FloodSense - Monitoring System",
-            description: "A complete real-time flood prediction and alert system. The frontend provides a dashboard while the backend manages sensor data nodes efficiently.",
+            title: "FloodSense - Flood Prediction & Alert System",
+            description: "A complete real-time flood prediction and alert system. The frontend provides a visual analytics while the backend fetch weather API data and calculate flood risk forecasting.",
             tags: ["React", "Node.js", "Express", "PostgreSQL"],
             githubFrontend: "https://github.com/ThiwankaLakshan/FloodSense-Frontend",
             githubBackend: "https://github.com/ThiwankaLakshan/FloodSense-Backend",
             image: "/flood_monitoring.png",
         },
         {
-            title: "MooMap",
-            description: "Real-time free range cattle monitoring system using IoT smart collars and LoRa communication.",
-            tags: ["Node.js", "Express", "IoT", "APIs"],
+            title: "MooMap - Free-Range Cattle Tracking System",
+            description: "Real-time free-range cattle monitoring system using IoT smart collars and LoRaWAN communication.",
+            tags: ["Node.js", "Express", "IoT", "RESTful APIs"],
             githubBackend: "https://github.com/ThiwankaLakshan",
-            liveSite: "https://www.moomap.app/",
+            liveSite: "https://moomap.app",
             image: "/moomap_preview.png",
         },
         {
@@ -40,7 +63,7 @@ const Projects = () => {
     return (
         <section id="projects" className="py-24 bg-slate-950">
             <div className="container mx-auto px-6 max-w-6xl">
-                
+
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -54,8 +77,8 @@ const Projects = () => {
 
                 <div className="grid md:grid-cols-2 gap-8">
                     {projects.map((project, index) => (
-                        <motion.div 
-                            key={index} 
+                        <motion.div
+                            key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
@@ -74,26 +97,26 @@ const Projects = () => {
                                         </div>
                                     </>
                                 )}
-                                
+
                                 <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/70 transition-colors z-10"></div>
-                                
+
                                 {/* Overlay Button(s) */}
                                 <div className="absolute inset-0 z-20 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-3">
                                     {project.githubFrontend ? (
                                         <div className="flex flex-col sm:flex-row gap-3">
-                                            <a 
-                                                href={project.githubFrontend} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer" 
+                                            <a
+                                                href={project.githubFrontend}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors text-sm"
                                             >
                                                 <Github className="w-4 h-4" />
                                                 Frontend Code
                                             </a>
-                                            <a 
-                                                href={project.githubBackend} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer" 
+                                            <a
+                                                href={project.githubBackend}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors text-sm"
                                             >
                                                 <Github className="w-4 h-4" />
@@ -102,19 +125,19 @@ const Projects = () => {
                                         </div>
                                     ) : project.liveSite ? (
                                         <div className="flex flex-col sm:flex-row gap-3">
-                                            <a 
-                                                href={project.liveSite} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer" 
+                                            <a
+                                                href={project.liveSite}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-600/90 text-white border border-cyan-500/50 backdrop-blur-md hover:bg-cyan-500 transition-colors text-sm"
                                             >
                                                 <ExternalLink className="w-4 h-4" />
                                                 View Site
                                             </a>
-                                            <a 
-                                                href={project.githubBackend} 
-                                                target="_blank" 
-                                                rel="noopener noreferrer" 
+                                            <a
+                                                href={project.githubBackend}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors text-sm"
                                             >
                                                 <Github className="w-4 h-4" />
@@ -122,10 +145,10 @@ const Projects = () => {
                                             </a>
                                         </div>
                                     ) : (
-                                        <a 
-                                            href={project.githubBackend} 
-                                            target="_blank" 
-                                            rel="noopener noreferrer" 
+                                        <a
+                                            href={project.githubBackend}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors"
                                         >
                                             <Github className="w-5 h-5" />
@@ -134,18 +157,19 @@ const Projects = () => {
                                     )}
                                 </div>
                             </div>
-                            
+
                             <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                                 {project.title}
                             </h3>
                             <p className="text-slate-400 text-sm line-clamp-2 mb-4">
                                 {project.description}
                             </p>
-                            
-                            <div className="flex flex-wrap gap-2">
+
+                            <div className="flex flex-wrap gap-2 relative z-30">
                                 {project.tags.map(tag => (
-                                    <span key={tag} className="text-xs text-slate-500 font-mono bg-slate-900 px-2 py-1 rounded border border-slate-800">
-                                        #{tag.replace(/\s+/g, '')}
+                                    <span key={tag} className="flex items-center gap-1.5 text-xs text-slate-400 bg-slate-900 px-2.5 py-1 rounded border border-slate-800 hover:border-cyan-500 hover:text-cyan-400 hover:bg-slate-800 transition-all cursor-pointer hover:scale-105 shadow-sm hover:shadow-cyan-500/20">
+                                        {tagIcons[tag] && React.cloneElement(tagIcons[tag], { className: "w-3.5 h-3.5" })}
+                                        {tag}
                                     </span>
                                 ))}
                             </div>
@@ -153,7 +177,7 @@ const Projects = () => {
                     ))}
                 </div>
 
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

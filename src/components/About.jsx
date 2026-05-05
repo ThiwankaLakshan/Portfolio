@@ -21,7 +21,7 @@ const About = () => {
                                 My journey involves building end-to-end applications, from intuitive user interfaces to robust backend architectures. I enjoy both crafting seamless user experiences and the logic behind the scenes—making sure APIs are fast, databases are optimized, and applications are secure.
                             </p>
                             <p>
-                                When I'm not coding, you can find me volunteering with <span className="text-blue-400">IEEE</span>, organizing tech events, or exploring the latest in cloud computing.
+                                When I'm not coding, you can find me volunteering with <span className="text-cyan-400">IEEE</span>, organizing tech events, or exploring the latest in <span className="text-cyan-400">emerging technologies</span>.
                             </p>
                         </div>
                     </motion.div>

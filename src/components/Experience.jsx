@@ -11,7 +11,9 @@ import {
     SiDotnet,
     SiPython,
     SiDocker,
-    SiGit
+    SiGit,
+    SiHtml5,
+    SiCss3
 } from 'react-icons/si';
 import { Globe } from 'lucide-react';
 
@@ -53,18 +55,20 @@ const Experience = () => {
         {
             title: "Frontend & Web",
             skills: [
-                { name: "JavaScript (ES6+)", icon: <SiJavascript className="w-5 h-5" />, level: "Expert" },
-                { name: "React", icon: <SiReact className="w-5 h-5" />, level: "Advanced" },
-                { name: "REST APIs", icon: <Globe className="w-5 h-5" />, level: "Expert" }
+                { name: "React", icon: <SiReact className="w-5 h-5" />, level: "Intermediate" },
+                { name: "HTML5", icon: <SiHtml5 className="w-5 h-5" />, level: "Intermediate" },
+                { name: "CSS3", icon: <SiCss3 className="w-5 h-5" />, level: "Intermediate" },
+                { name: "JavaScript (ES6+)", icon: <SiJavascript className="w-5 h-5" />, level: "Advanced" },
+                { name: "REST APIs", icon: <Globe className="w-5 h-5" />, level: "Advanced" }
             ]
         },
         {
             title: "Backend Development",
             skills: [
-                { name: "Node.js", icon: <SiNodedotjs className="w-5 h-5" />, level: "Expert" },
-                { name: "Express.js", icon: <SiExpress className="w-5 h-5" />, level: "Expert" },
-                { name: "C# / .NET", icon: <SiDotnet className="w-5 h-5" />, level: "Advanced" },
-                { name: "Python", icon: <SiPython className="w-5 h-5" />, level: "Advanced" },
+                { name: "Node.js", icon: <SiNodedotjs className="w-5 h-5" />, level: "Advanced" },
+                { name: "Express.js", icon: <SiExpress className="w-5 h-5" />, level: "Advanced" },
+                { name: "C# / .NET", icon: <SiDotnet className="w-5 h-5" />, level: "Intermediate" },
+                { name: "Python", icon: <SiPython className="w-5 h-5" />, level: "Intermediate" },
                 { name: "Java", icon: <span className="font-bold text-xs">Java</span>, level: "Intermediate" }
             ]
         },
@@ -72,10 +76,10 @@ const Experience = () => {
             title: "Database & Tools",
             skills: [
                 { name: "PostgreSQL", icon: <SiPostgresql className="w-5 h-5" />, level: "Advanced" },
-                { name: "MongoDB", icon: <SiMongodb className="w-5 h-5" />, level: "Advanced" },
-                { name: "MySQL", icon: <SiMysql className="w-5 h-5" />, level: "Intermediate" },
-                { name: "Docker", icon: <SiDocker className="w-5 h-5" />, level: "Intermediate" },
-                { name: "Git / GitHub", icon: <SiGit className="w-5 h-5" />, level: "Expert" }
+                { name: "MySQL", icon: <SiMysql className="w-5 h-5" />, level: "Advanced" },
+                { name: "MongoDB", icon: <SiMongodb className="w-5 h-5" />, level: "Intermediate" },
+                { name: "Docker/Kubernetes", icon: <SiDocker className="w-5 h-5" />, level: "Intermediate" },
+                { name: "Git / GitHub", icon: <SiGit className="w-5 h-5" />, level: "Advanced" }
             ]
         }
     ];
