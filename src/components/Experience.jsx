@@ -67,9 +67,9 @@ const Experience = () => {
             skills: [
                 { name: "Node.js", icon: <SiNodedotjs className="w-5 h-5" />, level: "Advanced" },
                 { name: "Express.js", icon: <SiExpress className="w-5 h-5" />, level: "Advanced" },
-                { name: "C# / .NET", icon: <SiDotnet className="w-5 h-5" />, level: "Intermediate" },
                 { name: "Python", icon: <SiPython className="w-5 h-5" />, level: "Intermediate" },
-                { name: "Java", icon: <span className="font-bold text-xs">Java</span>, level: "Intermediate" }
+                { name: "Java", icon: <span className="font-bold text-xs">Java</span>, level: "Intermediate" },
+                { name: "C# / .NET", icon: <SiDotnet className="w-5 h-5" />, level: "Intermediate" }
             ]
         },
         {

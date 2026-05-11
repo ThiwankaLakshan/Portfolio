@@ -15,13 +15,13 @@ const About = () => {
                         <h2 className="text-3xl font-bold mb-6">About Me</h2>
                         <div className="space-y-6 text-lg text-slate-400 leading-relaxed">
                             <p>
-                                Hello! I'm <span className="text-slate-200 font-medium">Thiwanka</span>, a dedicated software enthusiast currently pursuing my degree at the <span className="text-cyan-400">University of Vavuniya</span>.
+                                Hello! I'm <span className="text-slate-200 font-medium">Thiwanka</span>, a dedicated software enthusiast currently pursuing my degree at the <a href="https://vau.ac.lk/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">University of Vavuniya</a>.
                             </p>
                             <p>
                                 My journey involves building end-to-end applications, from intuitive user interfaces to robust backend architectures. I enjoy both crafting seamless user experiences and the logic behind the scenes—making sure APIs are fast, databases are optimized, and applications are secure.
                             </p>
                             <p>
-                                When I'm not coding, you can find me volunteering with <span className="text-cyan-400">IEEE</span>, organizing tech events, or exploring the latest in <span className="text-cyan-400">emerging technologies</span>.
+                                When I'm not coding, you can find me volunteering with <a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">IEEE</a>, organizing tech events, or exploring the latest in <span className="text-cyan-400">emerging technologies</span>.
                             </p>
                         </div>
                     </motion.div>
