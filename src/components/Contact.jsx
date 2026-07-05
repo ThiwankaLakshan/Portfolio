@@ -123,7 +123,7 @@ const Contact = () => {
                             )}
                             {submitStatus === 'error' && (
                                 <div className="p-4 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-xl text-red-800 dark:text-red-300">
-                                    ✗ Failed to send message. Please try again or email me directly at thiwankalakshan007@gmail.com
+                                    ✗ Failed to send message. Please try again or email me directly at hello@thiwankalakshan.dev
                                 </div>
                             )}
 
@@ -158,8 +158,8 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-medium text-slate-500 dark:text-slate-400">Email</h4>
-                                    <a href="mailto:thiwankalakshan007@gmail.com" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-cyan-500 transition-colors">
-                                        thiwankalakshan007@gmail.com
+                                    <a href="mailto:hello@thiwankalakshan.dev" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-cyan-500 transition-colors">
+                                        hello@thiwankalakshan.dev
                                     </a>
                                 </div>
                             </div>

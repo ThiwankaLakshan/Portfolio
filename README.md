@@ -75,6 +75,6 @@ npm run preview
 
 Feel free to reach out if you have any questions or want to collaborate!
 
-- **Email:** thiwankalakshan007@gmail.com
+- **Email:** hello@thiwankalakshan.dev
 - **LinkedIn:** [Thiwankalakshan07](https://www.linkedin.com/in/thiwankalakshan07/)
 - **GitHub:** [ThiwankaLakshan](https://github.com/ThiwankaLakshan)

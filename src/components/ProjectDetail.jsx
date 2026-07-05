@@ -68,6 +68,7 @@ const projectDetails = {
         image: "/flood_monitoring.png",
         githubFrontend: "https://github.com/ThiwankaLakshan/FloodSense-Frontend",
         githubBackend: "https://github.com/ThiwankaLakshan/FloodSense-Backend",
+        liveSite: "https://floodsense-sl.vercel.app",
         tags: ["React", "Node.js", "Express", "PostgreSQL", "Leaflet", "Recharts", "TailwindCSS"],
         overview: "FloodSense is an advanced, real-time flood monitoring and early warning system designed specifically for Sri Lanka's Western Province. Built to address the devastating impact of seasonal monsoonal floods, the system automates weather telemetry collection, runs predictive risk assessment models, and immediately alerts citizens and emergency management officials of rising danger levels.",
         problem: "Seasonal monsoons in Sri Lanka lead to severe flooding, blockages, and loss of life. Standard monitoring networks lack real-time localized forecasting and accessible visualization, meaning citizens are often surprised by floodwaters, and authorities are slow to coordinate alerts.",

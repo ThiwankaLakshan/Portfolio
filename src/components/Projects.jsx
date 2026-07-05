@@ -34,6 +34,7 @@ const Projects = () => {
             tags: ["React", "Node.js", "Express", "PostgreSQL"],
             githubFrontend: "https://github.com/ThiwankaLakshan/FloodSense-Frontend",
             githubBackend: "https://github.com/ThiwankaLakshan/FloodSense-Backend",
+            liveSite: "https://floodsense-sl.vercel.app",
             image: "/flood_monitoring.png",
         },
         {
@@ -112,58 +113,51 @@ const Projects = () => {
                                     className="absolute inset-0 z-20 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-3"
                                     onClick={(e) => e.stopPropagation()}
                                 >
+                                    {project.liveSite && (
+                                        <a
+                                            href={project.liveSite}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-600/90 text-white border border-cyan-500/50 backdrop-blur-md hover:bg-cyan-500 transition-colors text-sm font-semibold shadow-lg shadow-cyan-950/20"
+                                        >
+                                            <ExternalLink className="w-4 h-4" />
+                                            View Site
+                                        </a>
+                                    )}
+
                                     {project.githubFrontend ? (
-                                        <div className="flex flex-col sm:flex-row gap-3">
+                                        <div className="flex flex-row gap-3">
                                             <a
                                                 href={project.githubFrontend}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors text-sm"
+                                                className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors text-xs font-medium"
                                             >
-                                                <Github className="w-4 h-4" />
-                                                Frontend Code
+                                                <Github className="w-3.5 h-3.5" />
+                                                Frontend
                                             </a>
                                             <a
                                                 href={project.githubBackend}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors text-sm"
+                                                className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors text-xs font-medium"
                                             >
-                                                <Github className="w-4 h-4" />
-                                                Backend Code
+                                                <Github className="w-3.5 h-3.5" />
+                                                Backend
                                             </a>
                                         </div>
-                                    ) : project.liveSite ? (
-                                        <div className="flex flex-col sm:flex-row gap-3">
-                                            <a
-                                                href={project.liveSite}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-600/90 text-white border border-cyan-500/50 backdrop-blur-md hover:bg-cyan-500 transition-colors text-sm"
-                                            >
-                                                <ExternalLink className="w-4 h-4" />
-                                                View Site
-                                            </a>
+                                    ) : (
+                                        project.githubBackend && (
                                             <a
                                                 href={project.githubBackend}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors text-sm"
+                                                className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors text-sm font-medium"
                                             >
                                                 <Github className="w-4 h-4" />
                                                 View Code
                                             </a>
-                                        </div>
-                                    ) : (
-                                        <a
-                                            href={project.githubBackend}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-2 px-6 py-3 rounded-full bg-black/70 text-white border border-white/10 backdrop-blur-md hover:bg-black/90 transition-colors"
-                                        >
-                                            <Github className="w-5 h-5" />
-                                            View Code
-                                        </a>
+                                        )
                                     )}
                                 </div>
                             </div>

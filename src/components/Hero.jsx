@@ -50,7 +50,7 @@ const Hero = () => {
                         <a href="https://www.linkedin.com/in/thiwankalakshan07/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
                             <Linkedin size={24} />
                         </a>
-                        <a href="mailto:thiwankalakshan07@gmail.com" className="text-slate-400 hover:text-white transition-colors">
+                        <a href="mailto:hello@thiwankalakshan.dev" className="text-slate-400 hover:text-white transition-colors">
                             <Mail size={24} />
                         </a>
                     </div>
