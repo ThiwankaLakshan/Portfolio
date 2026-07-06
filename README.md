@@ -3,7 +3,7 @@
 Welcome to the repository for my personal portfolio website! This project serves as a central hub to showcase my skills, experience, and the projects I have developed as a Full Stack Developer. 
 
 ## 🌐 Live Site
-You can view the live portfolio here: [Insert Live Site URL here if available]
+You can view the live portfolio here: [thiwankalakshan.dev](https://www.thiwankalakshan.dev)
 
 ## ✨ Features
 - **Modern UI/UX:** Built with React and designed with a sleek, dark-themed aesthetic.
