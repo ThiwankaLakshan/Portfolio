@@ -170,7 +170,7 @@ const Contact = () => {
                                 <div>
                                     <h4 className="text-sm font-medium text-slate-500 dark:text-slate-400">Location</h4>
                                     <p className="text-lg font-semibold text-slate-900 dark:text-white">
-                                        Colombo, Sri Lanka
+                                        Anuradhapura, Sri Lanka
                                     </p>
                                 </div>
                             </div>
