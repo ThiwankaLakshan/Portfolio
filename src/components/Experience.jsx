@@ -85,7 +85,7 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="py-24 bg-slate-950">
+        <section id="experience" className="py-24 bg-transparent">
             <div className="container mx-auto px-6 max-w-6xl">
                 
                 {/* Experience Section */}

@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ProjectDetail from './components/ProjectDetail';
 import BackToTop from './components/BackToTop';
+import Starfield from './components/Starfield';
 
 function App() {
   const [activeProjectSlug, setActiveProjectSlug] = useState(null);
@@ -39,7 +40,8 @@ function App() {
   };
 
   return (
-    <div className="bg-[#0d1117] min-h-screen text-white font-inter flex flex-col justify-between">
+    <div className="bg-[#0d1117] min-h-screen text-white font-inter flex flex-col justify-between overflow-x-hidden">
+      <Starfield />
       <div>
         <AnimatePresence mode="wait">
           {activeProjectSlug ? (

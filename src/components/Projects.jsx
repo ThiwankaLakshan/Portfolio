@@ -66,7 +66,7 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className="py-24 bg-slate-950">
+        <section id="projects" className="py-24 bg-transparent">
             <div className="container mx-auto px-6 max-w-6xl">
 
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">

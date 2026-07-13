@@ -52,7 +52,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-24 bg-white dark:bg-[#0d1117] relative overflow-hidden">
+        <section id="contact" className="py-24 bg-transparent relative overflow-hidden">
             <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[20%] right-[-10%] w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-[10%] left-[-10%] w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
