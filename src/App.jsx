@@ -7,6 +7,7 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ProjectDetail from './components/ProjectDetail';
+import BackToTop from './components/BackToTop';
 
 function App() {
   const [activeProjectSlug, setActiveProjectSlug] = useState(null);
@@ -59,6 +60,8 @@ function App() {
           )}
         </AnimatePresence>
       </div>
+
+      <BackToTop />
 
       {/* Footer */}
       <footer className="bg-gray-900 border-t border-gray-800 py-8 text-center text-gray-400 text-sm">

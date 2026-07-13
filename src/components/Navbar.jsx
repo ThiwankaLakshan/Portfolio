@@ -25,8 +25,8 @@ const Navbar = () => {
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-950/90 backdrop-blur-md shadow-lg border-b border-slate-800' : 'bg-transparent'}`}>
             <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-                <a href="#" className="text-2xl font-bold tracking-tighter text-slate-100">
-                    TL<span className="text-cyan-500">.</span>
+                <a href="#" className="flex items-center gap-2.5">
+                    <img src="/logo.svg" alt="TL Logo" className="h-9 w-9 object-contain hover:scale-105 transition-transform duration-300" />
                 </a>
 
                 {/* Desktop Menu */}
