@@ -26,13 +26,14 @@ const Starfield = () => {
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Initialize stars with random X, Y and Z depth values
+        // Initialize stars with random X, Y, Z depth values and stable colors
         for (let i = 0; i < numStars; i++) {
             stars.push({
                 x: (Math.random() - 0.5) * canvas.width * 1.5,
                 y: (Math.random() - 0.5) * canvas.height * 1.5,
                 z: Math.random() * canvas.width,
-                prevZ: 0
+                prevZ: 0,
+                colorType: Math.random() > 0.5 ? 'cyan' : 'blue'
             });
             stars[i].prevZ = stars[i].z;
         }
@@ -74,6 +75,7 @@ const Starfield = () => {
                     star.x = (Math.random() - 0.5) * width * 1.5;
                     star.y = (Math.random() - 0.5) * height * 1.5;
                     star.prevZ = star.z;
+                    star.colorType = Math.random() > 0.5 ? 'cyan' : 'blue';
                 }
 
                 // Project 3D coordinate to 2D screen coordinate
@@ -86,8 +88,7 @@ const Starfield = () => {
 
                 // Stars fade in as they approach the screen (original max alpha of 0.45)
                 const alpha = Math.min((1 - star.z / width) * 1.2, 0.45);
-                const colorRatio = Math.random();
-                const strokeColor = colorRatio > 0.5 
+                const strokeColor = star.colorType === 'cyan'
                     ? `rgba(6, 182, 212, ${alpha})` // Cyan
                     : `rgba(59, 130, 246, ${alpha})`; // Blue
 

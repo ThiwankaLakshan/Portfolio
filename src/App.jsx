@@ -10,23 +10,21 @@ import ProjectDetail from './components/ProjectDetail';
 import BackToTop from './components/BackToTop';
 import Starfield from './components/Starfield';
 
-function App() {
-  const [activeProjectSlug, setActiveProjectSlug] = useState(null);
+const getActiveProjectFromHash = () => {
+  if (typeof window === 'undefined') return null;
+  const hash = window.location.hash;
+  if (hash.startsWith('#/project/')) {
+    return hash.replace('#/project/', '');
+  } else if (hash.startsWith('#project/')) {
+    return hash.replace('#project/', '');
+  }
+  return null;
+};
 
-  const getActiveProjectFromHash = () => {
-    const hash = window.location.hash;
-    if (hash.startsWith('#/project/')) {
-      return hash.replace('#/project/', '');
-    } else if (hash.startsWith('#project/')) {
-      return hash.replace('#project/', '');
-    }
-    return null;
-  };
+function App() {
+  const [activeProjectSlug, setActiveProjectSlug] = useState(getActiveProjectFromHash);
 
   useEffect(() => {
-    // Initial check on mount
-    setActiveProjectSlug(getActiveProjectFromHash());
-
     const handleHashChange = () => {
       setActiveProjectSlug(getActiveProjectFromHash());
     };
