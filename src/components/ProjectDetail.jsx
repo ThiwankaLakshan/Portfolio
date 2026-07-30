@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
     ArrowLeft, 
@@ -14,7 +14,18 @@ import {
     Server, 
     Database, 
     TrendingUp,
-    ShieldCheck
+    ShieldCheck,
+    Copy,
+    Check,
+    Award,
+    FileText,
+    Users,
+    Thermometer,
+    Sprout,
+    MapPin,
+    Globe,
+    Compass,
+    Radio
 } from 'lucide-react';
 import {
     SiReact,
@@ -55,7 +66,15 @@ const techIcons = {
     "LoRaWAN": <Cpu className="text-blue-400 w-4 h-4" />,
     "IoT": <Cpu className="text-indigo-400 w-4 h-4" />,
     "RESTful APIs": <Server className="text-slate-400 w-4 h-4" />,
-    "localStorage": <Database className="text-yellow-500 w-4 h-4" />
+    "localStorage": <Database className="text-yellow-500 w-4 h-4" />,
+    "Sensors": <Thermometer className="text-orange-400 w-4 h-4" />,
+    "Agriculture": <Sprout className="text-green-500 w-4 h-4" />,
+    "LoRa": <Radio className="text-blue-400 w-4 h-4" />,
+    "Smart Collars": <Cpu className="text-cyan-400 w-4 h-4" />,
+    "Livestock Tracking": <Compass className="text-emerald-400 w-4 h-4" />,
+    "Sri Lanka": <Globe className="text-amber-500 w-4 h-4" />,
+    "ESP32": <Cpu className="text-purple-400 w-4 h-4" />,
+    "GPS": <MapPin className="text-rose-400 w-4 h-4" />
 };
 
 const projectDetails = {
@@ -138,7 +157,7 @@ const projectDetails = {
             },
             {
                 title: "Health & Activity Classification",
-                desc: "Processes step counts and temperature data via python-based analyzers to identify cattle distress, heat cycles, or signs of illness."
+                desc: "Processes step counts and temperature data via Python-based analyzers to identify cattle distress, heat cycles, or signs of illness."
             }
         ],
         architecture: [
@@ -155,6 +174,74 @@ const projectDetails = {
                 detail: "Custom collar units carrying GPS modules, 3-axis sensors, and low-power transceivers optimized for open fields."
             }
         ]
+    },
+    "moomap-research": {
+        isAcademic: true,
+        title: "Real-Time Cattle Monitoring Using Low-Cost IoT Smart Collars with LoRa Communication in Sri Lanka's Dry Zones",
+        subtitle: "Research Paper & System Implementation",
+        category: "Academic Publication",
+        role: "Co-Author & Core Developer",
+        timeline: "Published (RCAICT 2025)",
+        image: "/moomap_preview.png",
+        // githubBackend: "https://github.com/ThiwankaLakshan/moomap-analyser",
+        liveSite: "https://drr.vau.ac.lk/handle/123456789/1355",
+        tags: ["IoT", "Smart Collars", "LoRa", "Livestock Tracking", "Sri Lanka", "ESP32", "GPS"],
+        overview: "Free-range cattle farming is a major livelihood in Sri Lanka's dry zones, but tracking animals over vast, unmapped terrains is challenging. This paper presents MooMap, an IoT-based cattle monitoring system utilizing low-cost GPS/temperature collars and long-range LoRaWAN communication. We discuss the hardware design, data transmission challenges, and a Flask-based telemetry analyzer that processes animal activity data to detect abnormalities, illnesses, and boundary breaches (geofencing).",
+        problem: "Traditional livestock management relies on manual tracking, which is labor-intensive and slow to identify sick or stolen cattle. In dry zones, cellular coverage is sparse, rendering GPS-GPRS collars ineffective. This research introduces a low-power, long-range LoRaWAN telemetry network combined with wearable multi-sensor collars to address tracking and health monitoring at low cost.",
+        solution: "MooMap utilizes lightweight GPS collars that transmit location coordinates, ambient temperature, and motion tracking data via LoRaWAN. The backend receives and catalogs these packets, while a Flask-based telemetry analyzer logs activity levels and calculates boundary behaviors (geofencing) to flag cows showing signs of disease, estrus, or escape.",
+        features: [
+            {
+                title: "Low-Power Multi-Sensor Node Prototypes",
+                desc: "Developed lightweight collar hardware integrating GPS receivers, temperature/humidity sensors, and low-power LoRa transceivers designed for long-term farm use."
+            },
+            {
+                title: "LoRaWAN Range and Telemetry Performance",
+                desc: "Tested nodes across a range of 2.5 km through dense vegetation and open fields, optimizing transmission frequency and battery life (6+ months)."
+            },
+            {
+                title: "Behavioral Telemetry and Activity Parsing",
+                desc: "Processed accelerometer and step telemetry through Python-based analyzers to calculate behavioral states and flag distress or illness."
+            },
+            {
+                title: "Real-Time Geo-Boundary Enforcement",
+                desc: "Implemented boundary calculations to monitor herd displacement, automatically triggering alerts when animals cross virtual pastures."
+            }
+        ],
+        architecture: [
+            {
+                component: "LoRaWAN Network Gateway",
+                detail: "Manages remote data packet reception from animal collars and forwards them using MQTT/HTTPS protocols."
+            },
+            {
+                component: "Python / Flask Analyser",
+                detail: "A specialized service (`moomap-analyser`) that classifies behavioral profiles and checks geofencing boundaries."
+            },
+            {
+                component: "Node.js / Express Backend API",
+                detail: "Handles high-throughput data streams, stores telemetry logs, and controls warning notifications."
+            }
+        ],
+        authors: [
+            "Udapola, W.A.K.B.",
+            "Ravichandran, R.",
+            "Imalka Randev, K.T.",
+            "Shashika Theekshana, V.P.",
+            "Roshan, S.",
+            "Nanduni Sanjana Wanniarachchi, D.",
+            "Yohan Shanuka, J.A.D.",
+            "Silva, K.C.N.A.",
+            "Bandara, S.M.S.G.T.L. (Thiwanka Lakshan)"
+        ],
+        venue: "Research Conference on Advances in Information and Communication Technology (RCAICT 2025)",
+        institution: "Faculty of Technological Studies, University of Vavuniya, Sri Lanka",
+        citationAPA: "Udapola, W. A. K. B., Ravichandran, R., Randev, K. T. I., Theekshana, V. P. S., Roshan, S., Wanniarachchi, D. N. S., ... & Bandara, S. M. S. G. T. L. (2025). Real-Time Cattle Monitoring Using Low-Cost IoT Smart Collars with LoRa Communication in Sri Lanka's Dry Zones. Research Conference on Advances in Information and Communication Technology (RCAICT).",
+        citationBibTeX: `@inproceedings{udapola2025realtime,
+  title={Real-Time Cattle Monitoring Using Low-Cost IoT Smart Collars with LoRa Communication in Sri Lanka's Dry Zones},
+  author={Udapola, W.A.K.B. and Ravichandran, R. and Imalka Randev, K.T. and Shashika Theekshana, V.P. and Roshan, S. and Nanduni Sanjana Wanniarachchi, D. and Yohan Shanuka, J.A.D. and Silva, K.C.N.A. and Bandara, S.M.S.G.T.L.},
+  booktitle={Research Conference on Advances in Information and Communication Technology (RCAICT)},
+  year={2025},
+  organization={University of Vavuniya}
+}`
     },
     "todo-app": {
         title: "To Do App",
@@ -176,7 +263,7 @@ const projectDetails = {
             },
             {
                 title: "Active Progress Dashboard",
-                desc: "An dynamic, gradient progress bar that calculates and visualizes task completion percentage in real time."
+                desc: "A dynamic, gradient progress bar that calculates and visualizes task completion percentage in real time."
             },
             {
                 title: "Deadline Scheduler",
@@ -233,7 +320,7 @@ const projectDetails = {
             },
             {
                 title: "Offline Standalone Reliability",
-                desc: "Direct database storage ensures high-speed transaction speeds and keeps the counter active during network outages."
+                desc: "Direct database storage ensures fast transaction speeds and keeps the counter active during network outages."
             }
         ],
         architecture: [
@@ -255,10 +342,17 @@ const projectDetails = {
 
 const ProjectDetail = ({ slug, onBack }) => {
     const project = projectDetails[slug];
+    const [copied, setCopied] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [slug]);
+
+    const handleCopyCitation = (text) => {
+        navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
 
     if (!project) {
         return (
@@ -377,23 +471,23 @@ const ProjectDetail = ({ slug, onBack }) => {
                     
                     {/* Main Columns */}
                     <div className="lg:col-span-2 space-y-12">
-                        {/* Executive Summary */}
+                        {/* Executive Summary / Abstract */}
                         <section className="bg-slate-900/20 p-8 rounded-2xl border border-slate-900 backdrop-blur-sm">
                             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                                 <BookOpen className="w-5 h-5 text-cyan-400" />
-                                Project Overview
+                                {project.isAcademic ? "Abstract" : "Project Overview"}
                             </h2>
                             <p className="text-slate-300 leading-relaxed text-base md:text-lg">
                                 {project.overview}
                             </p>
                         </section>
 
-                        {/* Problem & Solution */}
+                        {/* Problem & Solution / Introduction & Methodology */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div className="bg-slate-900/30 p-6 rounded-xl border border-slate-900/80">
                                 <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                                     <Layers className="w-4 h-4 text-red-400" />
-                                    The Challenge
+                                    {project.isAcademic ? "Introduction & Context" : "The Challenge"}
                                 </h3>
                                 <p className="text-slate-400 text-sm leading-relaxed">
                                     {project.problem}
@@ -402,7 +496,7 @@ const ProjectDetail = ({ slug, onBack }) => {
                             <div className="bg-slate-900/30 p-6 rounded-xl border border-slate-900/80">
                                 <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                                     <TrendingUp className="w-4 h-4 text-green-400" />
-                                    The Solution
+                                    {project.isAcademic ? "Methodology & Solution" : "The Solution"}
                                 </h3>
                                 <p className="text-slate-400 text-sm leading-relaxed">
                                     {project.solution}
@@ -410,11 +504,11 @@ const ProjectDetail = ({ slug, onBack }) => {
                             </div>
                         </div>
 
-                        {/* Features */}
+                        {/* Features / Contributions */}
                         <section className="space-y-6">
                             <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
                                 <CheckCircle2 className="w-5 h-5 text-cyan-400" />
-                                Key Capabilities & Features
+                                {project.isAcademic ? "Key Contributions & Research Findings" : "Key Capabilities & Features"}
                             </h2>
                             <div className="grid grid-cols-1 gap-4">
                                 {project.features.map((feature, idx) => (
@@ -438,7 +532,7 @@ const ProjectDetail = ({ slug, onBack }) => {
                         <section className="space-y-6">
                             <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
                                 <Code2 className="w-5 h-5 text-cyan-400" />
-                                System Architecture
+                                {project.isAcademic ? "System Architecture & Pipeline" : "System Architecture"}
                             </h2>
                             <div className="space-y-4">
                                 {project.architecture.map((layer, idx) => (
@@ -457,38 +551,104 @@ const ProjectDetail = ({ slug, onBack }) => {
                                 ))}
                             </div>
                         </section>
+
+                        {/* Citation block for Academic papers */}
+                        {project.isAcademic && (
+                            <section className="bg-slate-900/20 p-8 rounded-2xl border border-slate-900 backdrop-blur-sm space-y-6">
+                                <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                                    <Award className="w-5 h-5 text-cyan-400" />
+                                    How to Cite This Research
+                                </h2>
+                                <div className="space-y-4">
+                                    <div className="bg-slate-950 p-4 rounded-xl border border-slate-900 text-sm text-slate-400 relative">
+                                        <span className="absolute top-2 right-2 text-[10px] text-slate-500 font-mono tracking-wider uppercase bg-slate-900 px-2 py-0.5 rounded border border-slate-800">APA Citation</span>
+                                        <p className="pr-12 text-slate-300 leading-relaxed">{project.citationAPA}</p>
+                                    </div>
+                                    <div className="relative">
+                                        <pre className="bg-slate-950 p-4 rounded-xl border border-slate-900 text-xs text-slate-300 font-mono overflow-x-auto pr-16 select-all max-h-48">
+                                            {project.citationBibTeX}
+                                        </pre>
+                                        <button
+                                            onClick={() => handleCopyCitation(project.citationBibTeX)}
+                                            className="absolute top-3 right-3 p-2 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-cyan-400 rounded-lg border border-slate-800 transition-colors cursor-pointer"
+                                            title="Copy BibTeX Citation"
+                                        >
+                                            {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+                                        </button>
+                                    </div>
+                                </div>
+                            </section>
+                        )}
                     </div>
 
                     {/* Sidebar Columns */}
                     <div className="space-y-8">
                         {/* Meta Summary Card */}
                         <div className="bg-slate-900/40 p-6 rounded-2xl border border-slate-900 space-y-6 backdrop-blur-sm">
-                            <h3 className="text-lg font-bold text-white border-b border-slate-800 pb-3">Project Metadata</h3>
+                            <h3 className="text-lg font-bold text-white border-b border-slate-800 pb-3">
+                                {project.isAcademic ? "Publication Details" : "Project Metadata"}
+                            </h3>
                             
                             <div className="space-y-4">
-                                <div className="flex items-start gap-3">
-                                    <User className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <span className="block text-xs text-slate-500 font-medium uppercase">My Role</span>
-                                        <span className="text-sm font-semibold text-slate-200">{project.role}</span>
-                                    </div>
-                                </div>
+                                {project.isAcademic ? (
+                                    <>
+                                        <div className="flex items-start gap-3">
+                                            <Users className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
+                                            <div>
+                                                <span className="block text-xs text-slate-500 font-medium uppercase">Authors</span>
+                                                <span className="text-xs font-semibold text-slate-200">
+                                                    {project.authors.map((author, idx) => (
+                                                        <span key={idx} className={author.includes("Bandara") || author.includes("Thiwanka") ? "text-cyan-400 font-bold" : ""}>
+                                                            {author}{idx < project.authors.length - 1 ? ", " : ""}
+                                                        </span>
+                                                    ))}
+                                                </span>
+                                            </div>
+                                        </div>
 
-                                <div className="flex items-start gap-3">
-                                    <Calendar className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <span className="block text-xs text-slate-500 font-medium uppercase">Timeline</span>
-                                        <span className="text-sm font-semibold text-slate-200">{project.timeline}</span>
-                                    </div>
-                                </div>
+                                        <div className="flex items-start gap-3">
+                                            <BookOpen className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
+                                            <div>
+                                                <span className="block text-xs text-slate-500 font-medium uppercase">Journal/Conference</span>
+                                                <span className="text-xs font-semibold text-slate-200">{project.venue}</span>
+                                            </div>
+                                        </div>
 
-                                <div className="flex items-start gap-3">
-                                    <ShieldCheck className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <span className="block text-xs text-slate-500 font-medium uppercase">System Context</span>
-                                        <span className="text-sm font-semibold text-slate-200">Production Ready</span>
-                                    </div>
-                                </div>
+                                        <div className="flex items-start gap-3">
+                                            <Calendar className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
+                                            <div>
+                                                <span className="block text-xs text-slate-500 font-medium uppercase">Date Published</span>
+                                                <span className="text-sm font-semibold text-slate-200">{project.timeline}</span>
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="flex items-start gap-3">
+                                            <User className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
+                                            <div>
+                                                <span className="block text-xs text-slate-500 font-medium uppercase">My Role</span>
+                                                <span className="text-sm font-semibold text-slate-200">{project.role}</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-3">
+                                            <Calendar className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
+                                            <div>
+                                                <span className="block text-xs text-slate-500 font-medium uppercase">Timeline</span>
+                                                <span className="text-sm font-semibold text-slate-200">{project.timeline}</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-3">
+                                            <ShieldCheck className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
+                                            <div>
+                                                <span className="block text-xs text-slate-500 font-medium uppercase">System Context</span>
+                                                <span className="text-sm font-semibold text-slate-200">Production Ready</span>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
 
@@ -499,7 +659,7 @@ const ProjectDetail = ({ slug, onBack }) => {
                                     href={project.githubFrontend}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-slate-900 border border-slate-800 text-white hover:bg-slate-800 hover:border-slate-700 transition-all font-semibold text-sm text-center shadow-lg"
+                                    className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-slate-900 border border-slate-800 text-white hover:bg-slate-800 hover:border-slate-700 transition-all font-semibold text-sm text-center shadow-lg cursor-pointer"
                                 >
                                     <Github className="w-5 h-5" />
                                     Frontend Source Code
@@ -510,10 +670,10 @@ const ProjectDetail = ({ slug, onBack }) => {
                                     href={project.githubBackend}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-slate-900 border border-slate-800 text-white hover:bg-slate-800 hover:border-slate-700 transition-all font-semibold text-sm text-center shadow-lg"
+                                    className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-slate-900 border border-slate-800 text-white hover:bg-slate-800 hover:border-slate-700 transition-all font-semibold text-sm text-center shadow-lg cursor-pointer"
                                 >
                                     <Github className="w-5 h-5" />
-                                    {project.githubFrontend ? "Backend Source Code" : "Source Code Repository"}
+                                    {project.isAcademic ? "Source Code (GitHub)" : (project.githubFrontend ? "Backend Source Code" : "Source Code Repository")}
                                 </a>
                             )}
                             {project.liveSite && (
@@ -521,10 +681,10 @@ const ProjectDetail = ({ slug, onBack }) => {
                                     href={project.liveSite}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-cyan-600 text-white hover:bg-cyan-500 transition-all font-semibold text-sm text-center shadow-lg shadow-cyan-950/40"
+                                    className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-cyan-600 text-white hover:bg-cyan-500 transition-all font-semibold text-sm text-center shadow-lg shadow-cyan-950/40 cursor-pointer"
                                 >
                                     <ExternalLink className="w-5 h-5" />
-                                    Launch Live Demo
+                                    {project.isAcademic ? "Read Full Paper (PDF)" : "Launch Live Demo"}
                                 </a>
                             )}
                         </div>

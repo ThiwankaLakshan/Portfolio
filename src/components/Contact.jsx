@@ -66,11 +66,11 @@ const Contact = () => {
                     className="grid grid-cols-1 lg:grid-cols-2 gap-16"
                 >
                     {/* Left Column: Contact Form */}
-                    <div className="bg-slate-50 dark:bg-slate-800/50 p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-xl">
-                        <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">Send me a message</h3>
+                    <div className="bg-slate-900/40 p-8 md:p-10 rounded-3xl border border-slate-800 shadow-xl backdrop-blur-sm">
+                        <h3 className="text-2xl font-bold mb-6 text-white">Send me a message</h3>
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">
                                     Your Name
                                 </label>
                                 <input
@@ -80,12 +80,12 @@ const Contact = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-300 dark:border-slate-600 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors text-slate-900 dark:text-white"
-                                    placeholder="John Doe"
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-950/50 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors text-white"
+                                    // placeholder="John Doe"
                                 />
                             </div>
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                <label htmlFor="email" className="block text-sm font-medium text-slate-400 mb-2">
                                     Email Address
                                 </label>
                                 <input
@@ -95,12 +95,12 @@ const Contact = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-300 dark:border-slate-600 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors text-slate-900 dark:text-white"
-                                    placeholder="john@example.com"
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-950/50 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors text-white"
+                                    // placeholder="john@example.com"
                                 />
                             </div>
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-2">
                                     Your Message
                                 </label>
                                 <textarea
@@ -110,8 +110,8 @@ const Contact = () => {
                                     onChange={handleChange}
                                     required
                                     rows="5"
-                                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-300 dark:border-slate-600 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors text-slate-900 dark:text-white resize-none"
-                                    placeholder="Hello, I'd like to talk about..."
+                                    className="w-full px-4 py-3 rounded-xl bg-slate-950/50 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors text-white resize-none"
+                                    // placeholder="Hello, I'd like to talk about..."
                                 ></textarea>
                             </div>
 
@@ -142,10 +142,10 @@ const Contact = () => {
                     <div className="flex flex-col justify-center">
                         <div className="mb-8">
                             <span className="text-cyan-500 font-semibold tracking-wider text-sm uppercase">Let's Connect</span>
-                            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6 text-slate-900 dark:text-white">
+                            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6 text-white">
                                 Get In Touch
                             </h2>
-                            <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
+                            <p className="text-slate-400 text-lg leading-relaxed mb-8">
                                 I'm currently looking for new opportunities and would love to hear from you.
                                 Whether you have a question or just want to say hi, my inbox is always open!
                             </p>
@@ -157,8 +157,8 @@ const Contact = () => {
                                     <Mail size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="text-sm font-medium text-slate-500 dark:text-slate-400">Email</h4>
-                                    <a href="mailto:hello@thiwankalakshan.dev" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-cyan-500 transition-colors">
+                                    <h4 className="text-sm font-medium text-slate-500">Email</h4>
+                                    <a href="mailto:hello@thiwankalakshan.dev" className="text-lg font-semibold text-white hover:text-cyan-500 transition-colors">
                                         hello@thiwankalakshan.dev
                                     </a>
                                 </div>
@@ -168,8 +168,8 @@ const Contact = () => {
                                     <MapPin size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="text-sm font-medium text-slate-500 dark:text-slate-400">Location</h4>
-                                    <p className="text-lg font-semibold text-slate-900 dark:text-white">
+                                    <h4 className="text-sm font-medium text-slate-500">Location</h4>
+                                    <p className="text-lg font-semibold text-white">
                                         Anuradhapura, Sri Lanka
                                     </p>
                                 </div>
@@ -177,13 +177,13 @@ const Contact = () => {
                         </div>
 
                         <div>
-                            <h4 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-4">Follow Me</h4>
+                            <h4 className="text-sm font-medium text-slate-500 mb-4">Follow Me</h4>
                             <div className="flex gap-4">
                                 <a
                                     href="https://github.com/ThiwankaLakshan"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-3 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-600 dark:text-slate-400 hover:bg-cyan-500 hover:text-white transition-all duration-300"
+                                    className="p-3 bg-slate-900 rounded-full text-slate-400 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 border border-slate-800 transition-all duration-300"
                                 >
                                     <Github size={24} />
                                 </a>
@@ -191,7 +191,7 @@ const Contact = () => {
                                     href="https://www.linkedin.com/in/thiwankalakshan07/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-3 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-600 dark:text-slate-400 hover:bg-cyan-500 hover:text-white transition-all duration-300"
+                                    className="p-3 bg-slate-900 rounded-full text-slate-400 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 border border-slate-800 transition-all duration-300"
                                 >
                                     <Linkedin size={24} />
                                 </a>

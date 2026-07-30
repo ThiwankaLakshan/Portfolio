@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Publications from './components/Publications';
 import Contact from './components/Contact';
 import ProjectDetail from './components/ProjectDetail';
 import BackToTop from './components/BackToTop';
@@ -34,7 +35,11 @@ function App() {
   }, []);
 
   const handleBackToHome = () => {
-    window.location.hash = '#projects';
+    if (activeProjectSlug === 'moomap-research') {
+      window.location.hash = '#publications';
+    } else {
+      window.location.hash = '#projects';
+    }
   };
 
   return (
@@ -55,6 +60,7 @@ function App() {
               <About />
               <Experience />
               <Projects />
+              <Publications />
               <Contact />
             </div>
           )}

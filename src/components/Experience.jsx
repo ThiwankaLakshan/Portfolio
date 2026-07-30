@@ -79,7 +79,7 @@ const Experience = () => {
                 { name: "MySQL", icon: <SiMysql className="w-5 h-5" />, level: "Advanced" },
                 { name: "MongoDB", icon: <SiMongodb className="w-5 h-5" />, level: "Intermediate" },
                 { name: "Docker/Kubernetes", icon: <SiDocker className="w-5 h-5" />, level: "Intermediate" },
-                { name: "Git / GitHub", icon: <SiGit className="w-5 h-5" />, level: "Advanced" }
+                { name: "Git / GitHub", icon: <SiGit className="w-5 h-5" />, level: "Intermediate" }
             ]
         }
     ];
