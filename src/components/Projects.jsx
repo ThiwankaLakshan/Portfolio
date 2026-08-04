@@ -35,7 +35,7 @@ const Projects = () => {
             githubFrontend: "https://github.com/ThiwankaLakshan/FloodSense-Frontend",
             githubBackend: "https://github.com/ThiwankaLakshan/FloodSense-Backend",
             liveSite: "https://floodsense-sl.vercel.app",
-            image: "/flood_monitoring.png",
+            image: "/flood_monitoring.webp",
         },
         {
             slug: "moomap",
@@ -44,7 +44,7 @@ const Projects = () => {
             tags: ["Node.js", "Express", "IoT", "RESTful APIs"],
             githubBackend: "https://github.com/ThiwankaLakshan",
             liveSite: "https://moomap.app",
-            image: "/moomap_preview.png",
+            image: "/moomap_preview.webp",
         },
         {
             slug: "todo-app",
@@ -53,7 +53,7 @@ const Projects = () => {
             tags: ["JavaScript", "HTML5", "CSS3"],
             githubBackend: "https://github.com/ThiwankaLakshan/To-Do-App",
             liveSite: "https://to-do-app-thiwanka.vercel.app/",
-            image: "/todo_preview.png",
+            image: "/todo_preview.webp",
         },
         {
             slug: "ticket-booking",
@@ -61,7 +61,7 @@ const Projects = () => {
             description: "Desktop ticketing solution offering robust sales management, seat allocation, and reporting features for trains and cricket matches.",
             tags: ["C#", ".NET", "WindowsForms"],
             githubBackend: "https://github.com/ThiwankaLakshan/Online-Ticket-Selling-App",
-            image: "/train_cricket_preview.png",
+            image: "/train_cricket_preview.webp",
         }
     ];
 

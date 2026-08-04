@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowRight, Download } from 'lucide-react';
-import profileImg from '../assets/profile.jpg';
+import profileWebp from '../assets/profile.webp';
+import profileJpg from '../assets/profile-optimized.jpg';
 
 const Hero = () => {
     return (
@@ -66,11 +67,15 @@ const Hero = () => {
                 >
                     <div className="relative z-10 w-80 h-80 mx-auto">
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
-                        <img
-                            src={profileImg}
-                            alt="Thiwanka Lakshan"
-                            className="relative w-full h-full object-cover rounded-full border-4 border-slate-800/50 shadow-2xl hover:scale-105 transition-transform duration-500"
-                        />
+                        <picture>
+                            <source srcSet={profileWebp} type="image/webp" />
+                            <img
+                                src={profileJpg}
+                                alt="Thiwanka Lakshan"
+                                fetchPriority="high"
+                                className="relative w-full h-full object-cover rounded-full border-4 border-slate-800/50 shadow-2xl hover:scale-105 transition-transform duration-500"
+                            />
+                        </picture>
 
                         {/* Floating Tech Badge */}
                         <div className="absolute -bottom-4 -right-4 bg-slate-900/80 backdrop-blur-md border border-slate-700 p-4 rounded-xl shadow-xl animate-bounce duration-[3000ms]">

@@ -84,7 +84,8 @@ const projectDetails = {
         category: "Full Stack System",
         role: "Full Stack Developer",
         timeline: "Feb 2026 - Present",
-        image: "/flood_monitoring.png",
+        image: "/flood_monitoring.webp",
+        bgAlign: "object-left",
         githubFrontend: "https://github.com/ThiwankaLakshan/FloodSense-Frontend",
         githubBackend: "https://github.com/ThiwankaLakshan/FloodSense-Backend",
         liveSite: "https://floodsense-sl.vercel.app",
@@ -135,7 +136,8 @@ const projectDetails = {
         category: "IoT & Data Analytics",
         role: "Backend Developer",
         timeline: "Oct 2025 - Jan 2026",
-        image: "/moomap_preview.png",
+        image: "/moomap_preview.webp",
+        bgAlign: "object-right",
         githubBackend: "https://github.com/ThiwankaLakshan",
         liveSite: "https://moomap.app",
         tags: ["Node.js", "Express", "Python", "Flask", "IoT", "LoRaWAN", "RESTful APIs"],
@@ -182,7 +184,8 @@ const projectDetails = {
         category: "Academic Publication",
         role: "Co-Author & Core Developer",
         timeline: "Published (RCAICT 2025)",
-        image: "/moomap_preview.png",
+        image: "/moomap_preview.webp",
+        bgAlign: "object-right",
         // githubBackend: "https://github.com/ThiwankaLakshan/moomap-analyser",
         liveSite: "https://drr.vau.ac.lk/handle/123456789/1355",
         tags: ["IoT", "Smart Collars", "LoRa", "Livestock Tracking", "Sri Lanka", "ESP32", "GPS"],
@@ -249,7 +252,7 @@ const projectDetails = {
         category: "Frontend Development",
         role: "Frontend Developer",
         timeline: "Nov 2025",
-        image: "/todo_preview.png",
+        image: "/todo_preview.webp",
         githubBackend: "https://github.com/ThiwankaLakshan/To-Do-App",
         liveSite: "https://to-do-app-thiwanka.vercel.app/",
         tags: ["JavaScript", "HTML5", "CSS3", "localStorage"],
@@ -299,7 +302,7 @@ const projectDetails = {
         category: "Desktop Application Development",
         role: "C# .NET Developer",
         timeline: "May 2025 - Jul 2025",
-        image: "/train_cricket_preview.png",
+        image: "/train_cricket_preview.webp",
         githubBackend: "https://github.com/ThiwankaLakshan/Online-Ticket-Selling-App",
         tags: ["C#", ".NET", "WindowsForms", "SQL Server"],
         overview: "This Online Ticket Booking System is a standalone desktop application built to streamline offline and online seat reservations. Combining an interactive visual grid map with sales reporting tools, the software manages seat inventories for passenger trains and cricket stadiums.",
@@ -433,11 +436,11 @@ const ProjectDetail = ({ slug, onBack }) => {
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" />
 
                 {project.image && (
-                    <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-20 md:opacity-40 hidden md:block z-0">
+                    <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-15 md:opacity-25 hidden md:block z-0 [mask-image:radial-gradient(ellipse_at_center_right,rgba(0,0,0,1)_10%,rgba(0,0,0,0)_90%)]">
                         <img 
                             src={project.image} 
                             alt={project.title} 
-                            className="w-full h-full object-cover object-left"
+                            className={`w-full h-full object-cover ${project.bgAlign || 'object-center'}`}
                         />
                     </div>
                 )}
